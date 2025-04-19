@@ -90,7 +90,9 @@ export default function Home() {
           </h2>
           <div className="grid md:grid-cols-3 gap-8">
             <Card className="p-6 border-primary/20 hover:border-primary/40 transition-colors bg-white">
-              <Bell className="w-12 h-12 text-primary mb-4" />
+              <div className="bg-blue-100 p-3 rounded-lg text-primary-600 inline-block mb-4">
+                <Bell className="w-8 h-8 text-primary" />
+              </div>
               <h3 className="text-xl font-semibold mb-2 text-gray-900">
                 Smart Notifications
               </h3>
@@ -100,7 +102,9 @@ export default function Home() {
               </p>
             </Card>
             <Card className="p-6 border-primary/20 hover:border-primary/40 transition-colors bg-white">
-              <Code className="w-12 h-12 text-primary mb-4" />
+              <div className="bg-blue-100 p-3 rounded-lg text-primary-600 inline-block mb-4">
+                <Code className="w-8 h-8 text-primary" />
+              </div>
               <h3 className="text-xl font-semibold mb-2 text-gray-900">
                 Easy Integration
               </h3>
@@ -110,7 +114,9 @@ export default function Home() {
               </p>
             </Card>
             <Card className="p-6 border-primary/20 hover:border-primary/40 transition-colors bg-white">
-              <Settings className="w-12 h-12 text-primary mb-4" />
+              <div className="bg-blue-100 p-3 rounded-lg text-primary-600 inline-block mb-4">
+                <Settings className="w-8 h-8 text-primary" />
+              </div>
               <h3 className="text-xl font-semibold mb-2 text-gray-900">
                 Full Customization
               </h3>
