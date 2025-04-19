@@ -28,10 +28,10 @@ export default function Home() {
   }, []);
 
   return (
-    <div className="min-h-screen bg-background">
+    <main className="bg-white">
       {/* Hero Section */}
-      <section className="animate-section relative bg-background opacity-0 h-screen">
-        <div className="container mx-auto h-screen flex">
+      <section className="relative bg-background">
+        <div className="container mx-auto min-h-[calc(100vh-95px)] flex">
           <div className="flex flex-col md:flex-row items-center gap-8">
             <div className="flex-1 text-center md:text-left">
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-display font-bold leading-tight mb-6 animate-text opacity-0 transition-all duration-1000 bg-gradient-to-r from-primary via-purple-500 to-primary bg-[length:200%_auto] bg-clip-text text-transparent">
@@ -192,6 +192,6 @@ export default function Home() {
           </Button>
         </div>
       </section>
-    </div>
+    </main>
   );
 }
