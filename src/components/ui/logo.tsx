@@ -1,8 +1,6 @@
 "use client";
 
-interface LogoProps {
-  props: any;
-}
+interface LogoProps extends React.SVGProps<SVGSVGElement> {}
 
 export function Logo({ ...props }: LogoProps) {
   return (
