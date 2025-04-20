@@ -56,7 +56,7 @@ export default function SignUpPage() {
 
   return (
     <div className="container relative h-screen flex-col items-center justify-center grid lg:max-w-none lg:grid-cols-2 lg:px-0">
-      <div className="relative hidden h-full flex-col bg-gradient-to-br from-primary via-purple-600 to-primary p-10 text-white lg:flex dark:border-r">
+      <div className="relative hidden h-full flex-col bg-gradient-to-br from-purple-600 via-blue-400 to-purple-600 p-10 text-white lg:flex dark:border-r">
         <div className="relative z-20 mt-auto">
           {/* Animated Toast Notifications */}
           <div className="relative mx-auto w-full max-w-[500px] h-[500px]">
