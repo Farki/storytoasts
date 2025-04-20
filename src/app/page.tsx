@@ -33,10 +33,10 @@ export default function Home() {
       <section className="relative flex bg-background min-h-[calc(100vh-95px)] px-4">
         <div className="container mx-auto flex flex-col justify-center md:flex-row items-center gap-8">
           <div className="flex flex-col text-center md:text-left">
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-display font-bold leading-tight mb-6 animate-text opacity-0 transition-all duration-1000 bg-gradient-to-r from-primary via-purple-500 to-primary bg-[length:200%_auto] bg-clip-text text-transparent">
+            <h1 className="text-2xl md:text-5xl lg:text-6xl font-display font-bold leading-tight mb-6 animate-text opacity-0 transition-all duration-1000 bg-gradient-to-r from-primary via-purple-500 to-primary bg-[length:200%_auto] bg-clip-text text-transparent">
               Transform Visitor Engagement with Impactful Notifications
             </h1>
-            <p className="text-xl text-lime-50 mb-8">
+            <p className="md:text-xl text-lime-50 mb-8">
               StoryToast delivers attention-grabbing notifications that connect
               with your visitors, driving meaningful engagement and better
               conversion rates.
