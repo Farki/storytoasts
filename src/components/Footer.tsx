@@ -11,7 +11,7 @@ export function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           <div className="space-y-3">
             <Link href="/" className="flex items-center space-x-2">
-              <Logo className="h-8 md:h-20" />
+              <Logo className="h-8 md:h-14" />
             </Link>
             <p className="text-sm text-muted-foreground">
               Transform visitor engagement with impactful notifications.

@@ -80,6 +80,50 @@ export default function Home() {
         </div>
       </section>
 
+      {/* How It Works */}
+      <section className="animate-section py-20 px-4 bg-white opacity-0">
+        <div className="max-w-6xl mx-auto">
+          <h2 className="text-3xl font-bold text-center mb-12 text-[#020817]">
+            How It Works
+          </h2>
+          <div className="grid md:grid-cols-3 gap-8">
+            <div className="text-center">
+              <div className="w-12 h-12 bg-blue-50 rounded-full flex items-center justify-center mx-auto mb-4">
+                <span className="text-xl font-bold text-primary">1</span>
+              </div>
+              <h3 className="text-xl font-semibold mb-2 text-gray-900">
+                Sign Up
+              </h3>
+              <p className="text-gray-700">
+                Create your account and access the admin dashboard
+              </p>
+            </div>
+            <div className="text-center">
+              <div className="w-12 h-12 bg-blue-50 rounded-full flex items-center justify-center mx-auto mb-4">
+                <span className="text-xl font-bold text-primary">2</span>
+              </div>
+              <h3 className="text-xl font-semibold mb-2 text-gray-900">
+                Create Notifications
+              </h3>
+              <p className="text-gray-700">
+                Design your notifications and set display rules
+              </p>
+            </div>
+            <div className="text-center">
+              <div className="w-12 h-12 bg-blue-50 rounded-full flex items-center justify-center mx-auto mb-4">
+                <span className="text-xl font-bold text-primary">3</span>
+              </div>
+              <h3 className="text-xl font-semibold mb-2 text-gray-900">
+                Add to Your Site
+              </h3>
+              <p className="text-gray-700">
+                Copy our script and watch engagement grow
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Features Section */}
       <section className="animate-section py-20 px-4 bg-gray-50 opacity-0">
         <div className="max-w-6xl mx-auto">
@@ -123,50 +167,6 @@ export default function Home() {
                 through our intuitive dashboard.
               </p>
             </Card>
-          </div>
-        </div>
-      </section>
-
-      {/* How It Works */}
-      <section className="animate-section py-20 px-4 bg-white opacity-0">
-        <div className="max-w-6xl mx-auto">
-          <h2 className="text-3xl font-bold text-center mb-12 text-[#020817]">
-            How It Works
-          </h2>
-          <div className="grid md:grid-cols-3 gap-8">
-            <div className="text-center">
-              <div className="w-12 h-12 bg-blue-50 rounded-full flex items-center justify-center mx-auto mb-4">
-                <span className="text-xl font-bold text-primary">1</span>
-              </div>
-              <h3 className="text-xl font-semibold mb-2 text-gray-900">
-                Sign Up
-              </h3>
-              <p className="text-gray-700">
-                Create your account and access the admin dashboard
-              </p>
-            </div>
-            <div className="text-center">
-              <div className="w-12 h-12 bg-blue-50 rounded-full flex items-center justify-center mx-auto mb-4">
-                <span className="text-xl font-bold text-primary">2</span>
-              </div>
-              <h3 className="text-xl font-semibold mb-2 text-gray-900">
-                Create Notifications
-              </h3>
-              <p className="text-gray-700">
-                Design your notifications and set display rules
-              </p>
-            </div>
-            <div className="text-center">
-              <div className="w-12 h-12 bg-blue-50 rounded-full flex items-center justify-center mx-auto mb-4">
-                <span className="text-xl font-bold text-primary">3</span>
-              </div>
-              <h3 className="text-xl font-semibold mb-2 text-gray-900">
-                Add to Your Site
-              </h3>
-              <p className="text-gray-700">
-                Copy our script and watch engagement grow
-              </p>
-            </div>
           </div>
         </div>
       </section>
