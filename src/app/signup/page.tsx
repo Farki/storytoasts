@@ -55,13 +55,13 @@ export default function SignUpPage() {
   }
 
   return (
-    <div className="container min-h-screen relative flex-col items-center justify-center grid lg:max-w-none lg:grid-cols-2 lg:px-0">
-      <div className="relative hidden h-full flex-col justify-center bg-gradient-to-b from-primary/80 to-primary p-10 text-white lg:flex dark:border-r">
-        <div className="flex-col z-20 space-y-32 pt-20">
+    <div className="container relative h-screen flex-col items-center justify-center grid lg:max-w-none lg:grid-cols-2 lg:px-0">
+      <div className="relative hidden h-full flex-col bg-gradient-to-br from-primary via-purple-600 to-primary p-10 text-white lg:flex dark:border-r">
+        <div className="relative z-20 mt-auto">
           {/* Animated Toast Notifications */}
-          <div className="relative mx-auto w-full max-w-[400px] h-[300px]">
+          <div className="relative mx-auto w-full max-w-[500px] h-[500px]">
             {/* Toast 1 */}
-            <div className="absolute top-0 left-0 w-full p-4 bg-white rounded-lg shadow-lg transform -rotate-6 animate-float-1">
+            <div className="absolute top-0 left-0 w-full p-4 bg-white rounded-lg shadow-lg animate-float-1">
               <div className="flex items-center gap-3">
                 <div className="w-8 h-8 rounded-full bg-primary/20" />
                 <div className="space-y-1">
@@ -72,7 +72,7 @@ export default function SignUpPage() {
             </div>
 
             {/* Toast 2 */}
-            <div className="absolute top-20 right-0 w-full p-4 bg-white rounded-lg shadow-lg transform rotate-3 animate-float-2">
+            <div className="absolute top-32 right-0 w-full p-4 bg-white rounded-lg shadow-lg animate-float-2">
               <div className="flex items-center gap-3">
                 <div className="w-8 h-8 rounded-full bg-primary/20" />
                 <div className="space-y-1">
@@ -83,7 +83,7 @@ export default function SignUpPage() {
             </div>
 
             {/* Toast 3 */}
-            <div className="absolute bottom-0 left-10 w-full p-4 bg-white rounded-lg shadow-lg transform -rotate-3 animate-float-3">
+            <div className="absolute top-60 left-10 w-full p-4 bg-white rounded-lg shadow-lg animate-float-3">
               <div className="flex items-center gap-3">
                 <div className="w-8 h-8 rounded-full bg-primary/20" />
                 <div className="space-y-1">
