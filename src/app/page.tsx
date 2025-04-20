@@ -30,54 +30,52 @@ export default function Home() {
   return (
     <main className="bg-white">
       {/* Hero Section */}
-      <section className="relative bg-background">
-        <div className="container mx-auto min-h-[calc(100vh-95px)] flex">
-          <div className="flex flex-col md:flex-row items-center gap-8">
-            <div className="flex-1 text-center md:text-left">
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-display font-bold leading-tight mb-6 animate-text opacity-0 transition-all duration-1000 bg-gradient-to-r from-primary via-purple-500 to-primary bg-[length:200%_auto] bg-clip-text text-transparent">
-                Transform Visitor Engagement with Impactful Notifications
-              </h1>
-              <p className="text-xl text-lime-50 mb-8">
-                StoryToast delivers attention-grabbing notifications that
-                connect with your visitors, driving meaningful engagement and
-                better conversion rates.
-              </p>
-              <div className="flex gap-4 justify-center md:justify-start mb-12">
-                <Button
-                  size="lg"
-                  className="bg-primary hover:bg-primary/90 text-white"
-                  asChild
-                >
-                  <Link href="/signup">Get Started</Link>
-                </Button>
-                <Button
-                  size="lg"
-                  variant="outline"
-                  className="border-primary/20 hover:bg-primary/10"
-                  asChild
-                >
-                  <Link href="/admin">View Demo</Link>
-                </Button>
-              </div>
-            </div>
-
-            {/* Demo Video */}
-            <div className="w-full md:w-1/2 relative rounded-xl overflow-hidden shadow-2xl">
-              <video
-                className="w-full aspect-video object-cover"
-                autoPlay
-                loop
-                muted
-                playsInline
+      <section className="relative flex bg-background min-h-[calc(100vh-95px)]">
+        <div className="container mx-auto flex flex-col justify-center md:flex-row items-center gap-8">
+          <div className="flex flex-col text-center md:text-left">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-display font-bold leading-tight mb-6 animate-text opacity-0 transition-all duration-1000 bg-gradient-to-r from-primary via-purple-500 to-primary bg-[length:200%_auto] bg-clip-text text-transparent">
+              Transform Visitor Engagement with Impactful Notifications
+            </h1>
+            <p className="text-xl text-lime-50 mb-8">
+              StoryToast delivers attention-grabbing notifications that connect
+              with your visitors, driving meaningful engagement and better
+              conversion rates.
+            </p>
+            <div className="flex gap-4 justify-center md:justify-start mb-12">
+              <Button
+                size="lg"
+                className="bg-primary hover:bg-primary/90 text-white"
+                asChild
               >
-                <source
-                  src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4"
-                  type="video/mp4"
-                />
-                Your browser does not support the video tag.
-              </video>
-              <div className="absolute inset-0 bg-gradient-to-t from-primary/10 via-transparent to-transparent"></div>
+                <Link href="/signup">Get Started</Link>
+              </Button>
+              <Button
+                size="lg"
+                variant="outline"
+                className="border-primary/20 hover:bg-primary/10"
+                asChild
+              >
+                <Link href="/admin">View Demo</Link>
+              </Button>
             </div>
+          </div>
+
+          {/* Demo Video */}
+          <div className="relative rounded-xl overflow-hidden shadow-2xl">
+            <video
+              className="w-full aspect-video object-cover"
+              autoPlay
+              loop
+              muted
+              playsInline
+            >
+              <source
+                src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4"
+                type="video/mp4"
+              />
+              Your browser does not support the video tag.
+            </video>
+            <div className="absolute inset-0 bg-gradient-to-t from-primary/10 via-transparent to-transparent"></div>
           </div>
         </div>
       </section>
