@@ -3,8 +3,6 @@ import type { Metadata } from "next";
 import { Montserrat } from "next/font/google";
 import { Outfit } from "next/font/google";
 import { ThemeProvider } from "@/components/theme-provider";
-import { Header } from "@/components/Header";
-import { Footer } from "@/components/Footer";
 
 const montserrat = Montserrat({
   subsets: ["latin"],
@@ -36,11 +34,7 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          <div className="relative flex min-h-screen flex-col">
-            <Header />
-            {children}
-            <Footer />
-          </div>
+          {children}
         </ThemeProvider>
       </body>
     </html>

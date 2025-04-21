@@ -32,9 +32,14 @@ export default function AdminLayout({
           isCollapsed ? "w-16" : "w-64",
         )}
       >
-        <div className="flex h-16 items-center border-b px-4">
-          <Link href="/admin" className="flex items-center gap-2">
-            <Logo className="h-8 md:h-20" />
+        <div
+          className={cn(
+            "flex h-16 justify-center border-b",
+            isCollapsed ? "px-[20%]" : "px-[30%]",
+          )}
+        >
+          <Link href="/" className="flex">
+            <Logo className="w-full" />
           </Link>
         </div>
         <div className="flex-1 overflow-auto py-4">
@@ -46,8 +51,9 @@ export default function AdminLayout({
                   key={item.name}
                   href={item.href}
                   className={cn(
-                    "flex items-center gap-3 rounded-lg px-3 py-2 text-sm transition-all hover:bg-accent",
+                    "flex gap-3 rounded-lg px-3 py-2 text-sm transition-all hover:bg-accent",
                     isActive ? "bg-accent" : "transparent",
+                    isCollapsed ? "justify-center" : "justify-start",
                   )}
                 >
                   <item.icon className="h-4 w-4" />
@@ -57,16 +63,20 @@ export default function AdminLayout({
             })}
           </nav>
         </div>
-        <div className="border-t p-4">
+        <div
+          className={cn(
+            "border-t py-4 flex",
+            isCollapsed ? "justify-center" : "justify-start",
+          )}
+        >
           <Button
             variant="ghost"
-            className="w-full justify-start gap-2"
-            asChild
+            className="flex gap-3 rounded-lg px-3 py-2 text-sm transition-all hover:bg-accent"
           >
-            <Link href="/logout">
+            <>
               <LogOut className="h-4 w-4" />
               {!isCollapsed && <span>Logout</span>}
-            </Link>
+            </>
           </Button>
         </div>
       </div>

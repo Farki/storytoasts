@@ -6,7 +6,7 @@ import Link from "next/link";
 
 export function Header() {
   return (
-    <header className="flex justify-center sticky top-0 z-50 w-full -mt-[65px] md:-mt-[105px] border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
+    <header className="flex justify-center sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
       <div className="container flex items-center px-8 py-3">
         <Link href="/" className="flex items-center space-x-2">
           <Logo className="h-8 md:h-20" />
