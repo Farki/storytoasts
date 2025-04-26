@@ -9,7 +9,7 @@
     "lint": "next lint",
     "postinstall": "prisma generate",
     "email:dev": "email dev --dir=\"src/components/emails\"",
-    "email:build": "email build --dir=\"src/components/emails\" --pretty"
+    "email:build": "email build --dir=\"src/components/emails\""
   },
   "dependencies": {
     "@auth/prisma-adapter": "^2.9.0",
