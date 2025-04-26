@@ -29,7 +29,7 @@ export default function MagicLinkEmail({
       <Body style={main}>
         <Preview>Sign in to StoryToast</Preview>
         <Img
-          src={`${host}/images/logo.png`}
+          src={`https://${host}/images/logo.png`}
           width="200"
           height="84"
           alt="Storytoasts"
