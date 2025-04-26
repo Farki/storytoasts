@@ -1,39 +1,17 @@
-"use client";
-
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
-import { Bell, Code, Settings, Zap } from "lucide-react";
+import { Bell, Code, Settings } from "lucide-react";
 import Link from "next/link";
-import { useEffect } from "react";
+import { PRIVATE_ROUTES } from "@/routes";
 
 export default function Home() {
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add("fade-in-section");
-          }
-        });
-      },
-      {
-        threshold: 0.1,
-      },
-    );
-
-    const sections = document.querySelectorAll(".animate-section");
-    sections.forEach((section) => observer.observe(section));
-
-    return () => observer.disconnect();
-  }, []);
-
   return (
-    <main className="bg-gray-50">
+    <main>
       {/* Hero Section */}
       <section className="relative flex bg-background min-h-screen px-4">
         <div className="container mx-auto flex flex-col justify-center md:flex-row items-center gap-8">
           <div className="flex flex-col text-center md:text-left">
-            <h1 className="text-2xl md:text-5xl lg:text-6xl font-display font-bold leading-tight mb-6 animate-text opacity-0 transition-all duration-1000 bg-gradient-to-r from-primary via-purple-500 to-primary bg-[length:200%_auto] bg-clip-text text-transparent">
+            <h1 className="text-2xl md:text-5xl lg:text-6xl font-display font-bold leading-tight mb-6 animate-text transition-all duration-1000 bg-gradient-to-r from-primary via-purple-500 to-primary bg-[length:200%_auto] bg-clip-text text-transparent">
               Transform Visitor Engagement with Impactful Notifications
             </h1>
             <p className="md:text-xl text-lime-50 mb-8">
@@ -47,15 +25,15 @@ export default function Home() {
                 className="bg-primary hover:bg-primary/90 text-white"
                 asChild
               >
-                <Link href="/signup">Get Started</Link>
+                <Link href={PRIVATE_ROUTES.Dashboard}>Get Started</Link>
               </Button>
               <Button
                 size="lg"
                 variant="outline"
-                className="border-primary/20 hover:bg-primary/10"
+                className="border-white/20 hover:bg-primary/10 text-white"
                 asChild
               >
-                <Link href="/admin">View Demo</Link>
+                <Link href="/dashboard">View Demo</Link>
               </Button>
             </div>
           </div>
@@ -81,7 +59,7 @@ export default function Home() {
       </section>
 
       {/* How It Works */}
-      <section className="animate-section py-20 px-4 bg-white opacity-0">
+      <section className="py-20 px-4 bg-white">
         <div className="max-w-6xl mx-auto">
           <h2 className="text-3xl font-bold text-center mb-12 text-[#020817]">
             How It Works
@@ -125,7 +103,7 @@ export default function Home() {
       </section>
 
       {/* Features Section */}
-      <section className="animate-section py-20 px-4 bg-gray-50 opacity-0">
+      <section className="py-20 px-4 bg-gray-50">
         <div className="max-w-6xl mx-auto">
           <h2 className="text-3xl font-bold text-center mb-12 text-[#020817]">
             Why Choose StoryToast?
@@ -172,7 +150,7 @@ export default function Home() {
       </section>
 
       {/* CTA Section */}
-      <section className="animate-section py-20 px-4 bg-gradient-to-b from-blue-50 to-blue-100 opacity-0">
+      <section className="py-20 px-4 bg-gradient-to-b from-blue-50 to-blue-100">
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-3xl font-bold mb-6 text-[#020817]">
             Ready to Transform Your Website?
@@ -186,7 +164,7 @@ export default function Home() {
             className="bg-primary hover:bg-primary/90 text-white"
             asChild
           >
-            <Link href="/signup">Start Free Trial</Link>
+            <Link href={PRIVATE_ROUTES.Dashboard}>Start Free Trial</Link>
           </Button>
         </div>
       </section>

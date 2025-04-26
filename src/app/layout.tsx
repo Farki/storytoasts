@@ -1,8 +1,11 @@
 import "./globals.css";
+import { SessionProvider } from "next-auth/react";
 import type { Metadata } from "next";
 import { Montserrat } from "next/font/google";
 import { Outfit } from "next/font/google";
-import { ThemeProvider } from "@/components/theme-provider";
+import { UIProvider } from "@/context/UIContext";
+import Script from "next/script";
+import { ReactNode } from "react";
 
 const montserrat = Montserrat({
   subsets: ["latin"],
@@ -20,23 +23,21 @@ export const metadata: Metadata = {
     "Transform visitor engagement with attention-grabbing notifications that drive conversions.",
 };
 
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
+export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={`${outfit.variable} font-sans`}>
-        <ThemeProvider
-          attribute="class"
-          defaultTheme="system"
-          enableSystem
-          disableTransitionOnChange
+      <UIProvider>
+        <body
+          className={`${outfit.variable} font-sans bg-gray-50 text-gray-900`}
+          suppressHydrationWarning
         >
-          {children}
-        </ThemeProvider>
-      </body>
+          <Script
+            strategy="beforeInteractive"
+            src={`https://www.google.com/recaptcha/api.js?render=${process.env.NEXT_PUBLIC_CAPTCHA_SITE_KEY}`}
+          />
+          <SessionProvider>{children}</SessionProvider>
+        </body>
+      </UIProvider>
     </html>
   );
 }

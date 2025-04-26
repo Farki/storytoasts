@@ -1,6 +1,7 @@
+import { Header } from "@/components/layout/Header";
 import type { Metadata } from "next";
-import { Header } from "@/components/Header";
-import { Footer } from "@/components/Footer";
+import { Footer } from "@/components/layout/Footer";
+import Script from "next/script";
 
 export const metadata: Metadata = {
   title: "StoryToast - Impactful Website Notifications",
