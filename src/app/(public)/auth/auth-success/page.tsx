@@ -1,6 +1,6 @@
 import { Card } from "@/components/ui/card";
 import React from "react";
-import { ArrowLeft, CheckCircle2, LogIn, Mail } from "lucide-react";
+import { CheckCircle2, LogIn, Mail } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import { PUBLIC_ROUTES } from "@/routes";
