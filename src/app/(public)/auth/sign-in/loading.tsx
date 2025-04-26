@@ -1,5 +1,6 @@
 import React from "react";
+import LoadingPage from "@/components/layout/LoadingPage";
 
 export default function Loading() {
-  return <div className="h-screen bg-destructive">loading...</div>;
+  return <LoadingPage />;
 }

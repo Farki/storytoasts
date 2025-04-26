@@ -1,9 +1,9 @@
 import { redirect } from "next/navigation";
 import { PUBLIC_ROUTES } from "@/routes";
 import { auth } from "@/server/auth";
-import Sidebar from "@/app/dashboard/sidebar";
-import Content from "./content";
-import Header from "@/app/dashboard/header";
+import Sidebar from "@/components/dashboard/Sidebar";
+import Content from "@/components/dashboard/Content";
+import Header from "@/components/dashboard/Header";
 
 export default async function AdminLayout({
   children,

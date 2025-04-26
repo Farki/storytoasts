@@ -6,6 +6,7 @@ import { Outfit } from "next/font/google";
 import { UIProvider } from "@/context/UIContext";
 import Script from "next/script";
 import { ReactNode } from "react";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 
 const montserrat = Montserrat({
   subsets: ["latin"],
@@ -36,6 +37,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
             src={`https://www.google.com/recaptcha/api.js?render=${process.env.NEXT_PUBLIC_CAPTCHA_SITE_KEY}`}
           />
           <SessionProvider>{children}</SessionProvider>
+          <SpeedInsights />
         </body>
       </UIProvider>
     </html>
