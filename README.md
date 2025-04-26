@@ -8,6 +8,8 @@
 - [ ] Add sitemap generation (`next-sitemap` or custom solution)
 - [ ] Add global error handling
 - [ ] Setup analytics (Google Analytics, Plausible, etc.)
+- [ ] Sentry
 - [ ] Write unit and integration tests
 - [ ] 404 page
 - [ ] 500 page
+- [x] Magic link email template with date

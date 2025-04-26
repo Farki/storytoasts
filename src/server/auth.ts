@@ -3,6 +3,7 @@ import Resend from "next-auth/providers/resend";
 import { PrismaAdapter } from "@auth/prisma-adapter";
 import { prisma } from "@/lib/prisma";
 import { PUBLIC_ROUTES } from "@/routes";
+import { sendVerificationRequest } from "@/lib/authSendRequest";
 
 export const { handlers, auth, signIn, signOut } = NextAuth(() => {
   return {
@@ -10,12 +11,9 @@ export const { handlers, auth, signIn, signOut } = NextAuth(() => {
     providers: [
       Resend({
         apiKey: process.env.RESEND_API_KEY,
-        from: process.env.EMAIL_FROM,
-        // sendVerificationRequest({
-        //   identifier: email,
-        //   url,
-        //   provider: { server, from },
-        // }) {},
+        from: process.env.MAGIC_LINK_EMAIL_FROM,
+        maxAge: 60 * 5, // 5 minutes
+        sendVerificationRequest,
       }),
     ],
     pages: {

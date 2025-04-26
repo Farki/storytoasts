@@ -20,7 +20,7 @@ export default function AuthErrorPage() {
             </div>
             <div className="text-center lg:text-left space-y-2">
               <h1 className="text-3xl font-bold tracking-tight bg-gradient-to-r from-destructive to-purple-600 bg-clip-text text-transparent animate-in fade-in-0 duration-1000 delay-300">
-                Magic Link Expired
+                Magic Link Error
               </h1>
               <p className="text-muted-foreground animate-in fade-in-0 duration-1000 delay-500">
                 The magic link you tried to use has expired or is invalid.
