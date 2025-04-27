@@ -1,0 +1,9 @@
+{
+  "crons": [
+    {
+      "path": "/api/clean-expired-tokens",
+      "schedule": "0 5 * * *",
+      "timezone": "UTC"
+    }
+  ]
+}
