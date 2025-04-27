@@ -8,8 +8,7 @@
     "start": "next start",
     "lint": "next lint",
     "email:dev": "email dev --dir=\"src/components/emails\"",
-    "email:build": "email build --dir=\"src/components/emails\"",
-    "postinstall": "prisma generate"
+    "email:build": "email build --dir=\"src/components/emails\""
   },
   "prisma": {
     "schema": "./prisma/schema.prisma"

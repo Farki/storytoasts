@@ -29,17 +29,17 @@ const aj = arcjet
   );
 
 export async function middleware(req: NextRequest) {
-  // const userIp = process.env.NODE_ENV === "development" ? "127.0.0.1" : ip(req);
-  // // @ts-ignore
-  // const decision = await aj.protect(req, { fingerprint: userIp });
-  //
-  // if (decision.isDenied()) {
-  //   if (decision.reason.isRateLimit()) {
-  //     return NextResponse.json({ error: "Too Many Requests" }, { status: 429 });
-  //   } else {
-  //     return NextResponse.json({ error: "Forbidden" }, { status: 403 });
-  //   }
-  // }
+  const userIp = process.env.NODE_ENV === "development" ? "127.0.0.1" : ip(req);
+  // @ts-ignore
+  const decision = await aj.protect(req, { fingerprint: userIp });
+
+  if (decision.isDenied()) {
+    if (decision.reason.isRateLimit()) {
+      return NextResponse.json({ error: "Too Many Requests" }, { status: 429 });
+    } else {
+      return NextResponse.json({ error: "Forbidden" }, { status: 403 });
+    }
+  }
   const { nextUrl, cookies } = req;
   const path = nextUrl.pathname;
   const session = cookies.get("authjs.session-token");
