@@ -5,6 +5,7 @@
 - [x] Setup project structure (components, layouts, utils, hooks, etc.)
 - [x] Setup environment variables (.env.local)
 - [x] Magic link email template with date
+- [x] Arcjet
 - [ ] Sentry
 - [ ] Add SEO meta tags for better search engine indexing
 - [ ] Add sitemap generation (`next-sitemap` or custom solution)
