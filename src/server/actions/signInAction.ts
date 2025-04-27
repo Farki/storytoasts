@@ -46,17 +46,17 @@ export async function signInAction(
       };
     }
 
-    const req = await request();
-    const decision = await aj.protect(req, {
-      email: parsed.data.email,
-    });
-
-    if (decision.isDenied()) {
-      return {
-        success: false,
-        message: "Denied email address",
-      };
-    }
+    // const req = await request();
+    // const decision = await aj.protect(req, {
+    //   email: parsed.data.email,
+    // });
+    //
+    // if (decision.isDenied()) {
+    //   return {
+    //     success: false,
+    //     message: "Denied email address",
+    //   };
+    // }
 
     const captchaData = await verifyCaptchaToken(token);
 
