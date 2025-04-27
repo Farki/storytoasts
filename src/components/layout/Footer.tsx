@@ -22,7 +22,7 @@ export function Footer() {
             <ul className="space-y-2">
               <li>
                 <Link
-                  href="/features"
+                  href="#"
                   className="text-sm text-muted-foreground hover:text-primary transition-colors"
                 >
                   Features
@@ -30,7 +30,7 @@ export function Footer() {
               </li>
               <li>
                 <Link
-                  href="/pricing"
+                  href="#"
                   className="text-sm text-muted-foreground hover:text-primary transition-colors"
                 >
                   Pricing
@@ -38,7 +38,7 @@ export function Footer() {
               </li>
               <li>
                 <Link
-                  href="/docs"
+                  href="#"
                   className="text-sm text-muted-foreground hover:text-primary transition-colors"
                 >
                   Documentation
@@ -51,7 +51,7 @@ export function Footer() {
             <ul className="space-y-2">
               <li>
                 <Link
-                  href="/about"
+                  href="#"
                   className="text-sm text-muted-foreground hover:text-primary transition-colors"
                 >
                   About
@@ -59,7 +59,7 @@ export function Footer() {
               </li>
               <li>
                 <Link
-                  href="/blog"
+                  href="#"
                   className="text-sm text-muted-foreground hover:text-primary transition-colors"
                 >
                   Blog
@@ -67,7 +67,7 @@ export function Footer() {
               </li>
               <li>
                 <Link
-                  href="/careers"
+                  href="#"
                   className="text-sm text-muted-foreground hover:text-primary transition-colors"
                 >
                   Careers
@@ -80,7 +80,7 @@ export function Footer() {
             <ul className="space-y-2">
               <li>
                 <Link
-                  href="/privacy"
+                  href="#"
                   className="text-sm text-muted-foreground hover:text-primary transition-colors"
                 >
                   Privacy
@@ -88,7 +88,7 @@ export function Footer() {
               </li>
               <li>
                 <Link
-                  href="/terms"
+                  href="#"
                   className="text-sm text-muted-foreground hover:text-primary transition-colors"
                 >
                   Terms

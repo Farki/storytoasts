@@ -22,7 +22,7 @@ export default function Buttons() {
             className="text-white"
             onClick={() => signOut({ callbackUrl: "/" })}
           >
-            <Link href={PUBLIC_ROUTES.SignIn}>Sign Out</Link>
+            Sign Out
           </Button>
         ) : (
           <Button variant="default" asChild>
