@@ -3,6 +3,8 @@
 import { signIn } from "@/server/auth";
 import { signInSchema } from "@/validations/singInSchema";
 import { verifyCaptchaToken } from "@/lib/captcha";
+import arcjet, { validateEmail } from "@/lib/arcjet";
+import { request } from "@arcjet/next";
 
 export type FormState = {
   fields?: Record<string, string>;
@@ -10,6 +12,13 @@ export type FormState = {
   success?: boolean;
   message?: string;
 };
+
+const aj = arcjet.withRule(
+  validateEmail({
+    mode: "LIVE",
+    block: ["DISPOSABLE", "INVALID", "NO_MX_RECORDS"],
+  }),
+);
 
 export async function signInAction(
   prevState: FormState,
@@ -29,29 +38,35 @@ export async function signInAction(
         success: false,
       };
     }
-
     const token = parsed.data?.recaptchaToken;
     if (!token) {
       return {
         success: false,
-        errors: ["Token not found"],
+        message: "Captcha token not found",
+      };
+    }
+
+    const req = await request();
+    const decision = await aj.protect(req, {
+      email: parsed.data.email,
+    });
+
+    if (decision.isDenied()) {
+      return {
+        success: false,
+        message: "Denied email address",
       };
     }
 
     const captchaData = await verifyCaptchaToken(token);
 
-    if (!captchaData) {
+    if (!captchaData?.success || captchaData?.score < 0.5) {
       return {
         success: false,
-        message: "Captcha Failed",
-      };
-    }
-
-    if (!captchaData.success || captchaData.score < 0.5) {
-      return {
-        success: false,
-        message: "Captcha Failed",
-        errors: !captchaData.success ? captchaData["error-codes"] : undefined,
+        message: "Captcha verification failed",
+        errors: !captchaData?.success
+          ? captchaData?.["error-codes"]
+          : undefined,
       };
     }
 
