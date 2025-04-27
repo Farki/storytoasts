@@ -8,7 +8,11 @@
     "start": "next start",
     "lint": "next lint",
     "email:dev": "email dev --dir=\"src/components/emails\"",
-    "email:build": "email build --dir=\"src/components/emails\""
+    "email:build": "email build --dir=\"src/components/emails\"",
+    "postinstall": "prisma generate"
+  },
+  "prisma": {
+    "schema": "./prisma/schema.prisma"
   },
   "dependencies": {
     "@arcjet/inspect": "^1.0.0-beta.6",
