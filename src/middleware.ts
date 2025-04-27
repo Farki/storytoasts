@@ -18,7 +18,7 @@ const aj = arcjet
     slidingWindow({
       mode: "LIVE",
       interval: 10,
-      max: 20,
+      max: 100,
     }),
   )
   .withRule(
@@ -42,7 +42,9 @@ export async function middleware(req: NextRequest) {
   }
   const { nextUrl, cookies } = req;
   const path = nextUrl.pathname;
-  const session = cookies.get("authjs.session-token");
+  const session =
+    cookies.get("authjs.session-token") || //local
+    cookies.get("__Secure-authjs.session-token"); //prod
   const isMaintenanceMode = process.env.MAINTENANCE_MODE === "true";
 
   if (isMaintenanceMode) {
