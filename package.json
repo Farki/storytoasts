@@ -4,10 +4,9 @@
   "private": true,
   "scripts": {
     "dev": "NODE_OPTIONS='--inspect' next dev --turbopack",
-    "build": "next build && npm run email:build",
+    "build": "prisma generate && next build && npm run email:build",
     "start": "next start",
     "lint": "next lint",
-    "postinstall": "prisma generate",
     "email:dev": "email dev --dir=\"src/components/emails\"",
     "email:build": "email build --dir=\"src/components/emails\""
   },
