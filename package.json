@@ -40,10 +40,10 @@
     "zod": "^3.24.3"
   },
   "devDependencies": {
-    "next": "*",
     "@types/node": "^22.14.1",
     "@types/react": "^19.1.2",
     "@types/react-dom": "^19.1.2",
+    "next": "*",
     "prettier": "^3.5.3",
     "prisma": "^6.6.0",
     "react-email": "4.0.7"

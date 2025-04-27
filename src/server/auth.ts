@@ -2,7 +2,7 @@ import NextAuth from "next-auth";
 import Resend from "next-auth/providers/resend";
 import { PrismaAdapter } from "@auth/prisma-adapter";
 import { prisma } from "@/lib/prisma";
-import { PUBLIC_ROUTES } from "@/routes";
+import { PRIVATE_ROUTES, PUBLIC_ROUTES } from "@/routes";
 import { sendVerificationRequest } from "@/lib/authSendRequest";
 
 export const { handlers, auth, signIn, signOut } = NextAuth(() => {
@@ -22,8 +22,12 @@ export const { handlers, auth, signIn, signOut } = NextAuth(() => {
       error: "/auth/auth-error",
     },
     callbacks: {
+      // authorized: async ({ auth }) => {
+      //   // Logged in users are authenticated, otherwise redirect to login page
+      //   return !!auth;
+      // },
       async redirect({ baseUrl }) {
-        return `${baseUrl}/dashboard`;
+        return `${baseUrl}${PRIVATE_ROUTES.Dashboard}`;
       },
     },
   };

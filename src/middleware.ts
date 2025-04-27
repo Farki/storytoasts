@@ -1,14 +1,32 @@
 import { NextRequest, NextResponse } from "next/server";
-import { PUBLIC_ROUTES } from "@/routes";
+import { PRIVATE_ROUTES, PUBLIC_ROUTES } from "@/routes";
+
+const privatePaths = Object.values(PRIVATE_ROUTES).map(String);
+const publicPaths = Object.values(PUBLIC_ROUTES).map(String);
 
 export async function middleware(req: NextRequest) {
-  const isInMaintenanceMode = process.env.MAINTENANCE_MODE === "true";
+  const { nextUrl, cookies } = req;
+  const path = nextUrl.pathname;
+  const session = cookies.get("authjs.session-token");
+  const isMaintenanceMode = process.env.MAINTENANCE_MODE === "true";
 
-  if (isInMaintenanceMode) {
-    req.nextUrl.pathname = PUBLIC_ROUTES.Maintenance;
-
-    return NextResponse.rewrite(req.nextUrl);
+  if (isMaintenanceMode) {
+    nextUrl.pathname = PUBLIC_ROUTES.Maintenance;
+    return NextResponse.rewrite(nextUrl);
   }
+
+  const isPrivateRoute = privatePaths.includes(path);
+  const isPublicRoute = publicPaths.includes(path);
+
+  if (isPrivateRoute && !session) {
+    return NextResponse.redirect(new URL(PUBLIC_ROUTES.SignIn, nextUrl));
+  }
+
+  if (isPublicRoute && session && !path.startsWith(PRIVATE_ROUTES.Dashboard)) {
+    return NextResponse.redirect(new URL(PRIVATE_ROUTES.Dashboard, nextUrl));
+  }
+
+  return NextResponse.next();
 }
 
 export const config = {

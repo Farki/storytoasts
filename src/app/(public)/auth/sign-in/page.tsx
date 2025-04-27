@@ -1,15 +1,7 @@
 import { BarChart3, LineChart, DollarSign } from "lucide-react";
 import SignInForm from "@/app/(public)/auth/sign-in/sign-in-form";
-import { redirect } from "next/navigation";
-import { auth } from "@/server/auth";
-import { PRIVATE_ROUTES } from "@/routes";
 
 export default async function SignInPage() {
-  const email = (await auth())?.user?.email;
-  if (email) {
-    redirect(PRIVATE_ROUTES.Dashboard);
-  }
-
   return (
     <div className="container bg-background relative min-h-screen flex-col items-center justify-center grid lg:max-w-none lg:grid-cols-2 lg:px-0">
       <div className="relative hidden h-full flex-col bg-gradient-to-br from-primary via-purple-600 to-primary p-10 text-white lg:flex">
