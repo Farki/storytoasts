@@ -4,7 +4,7 @@ import { Bell, Code, Settings } from "lucide-react";
 import Link from "next/link";
 import { PRIVATE_ROUTES } from "@/routes";
 
-export default function Home() {
+export default function HomePage() {
   return (
     <main>
       {/* Hero Section */}
@@ -14,7 +14,7 @@ export default function Home() {
             <h1 className="font-display animate-text mb-6 bg-gradient-to-r from-primary via-purple-500 to-primary bg-[length:200%_auto] bg-clip-text text-2xl font-bold leading-tight text-transparent transition-all duration-1000 md:text-5xl lg:text-6xl">
               Transform Visitor Engagement with Impactful Notifications
             </h1>
-            <p className="mb-8 text-gray-600 md:text-xl">
+            <p className="mb-8 text-white md:text-xl">
               StoryToast delivers attention-grabbing notifications that connect
               with your visitors, driving meaningful engagement and better
               conversion rates.
@@ -30,7 +30,7 @@ export default function Home() {
               <Button
                 size="lg"
                 variant="outline"
-                className="border-gray-200 hover:bg-gray-50"
+                className="border-white/20 bg-transparent text-white"
                 asChild
               >
                 <Link href="/dashboard">View Demo</Link>

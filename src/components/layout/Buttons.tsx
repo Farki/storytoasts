@@ -18,8 +18,8 @@ export default function Buttons() {
           <Skeleton className="h-11 w-20 rounded-md" />
         ) : user ? (
           <Button
-            variant="ghost"
-            className="text-white"
+            variant="outline"
+            className="border-white/20 bg-transparent text-white"
             onClick={() => signOut({ callbackUrl: "/" })}
           >
             Sign Out
