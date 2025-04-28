@@ -28,7 +28,12 @@ export const metadata: Metadata = {
     locale: "en_US",
     url: "https://storytoasts.com/",
     siteName: "StoryToasts",
-    images: "/og-image.png",
+    images: {
+      url: "/og-image.png",
+      alt: "StoryToasts - Impactful Website Notifications",
+      width: 1200,
+      height: 630,
+    },
   },
 };
 
