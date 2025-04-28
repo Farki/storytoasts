@@ -59,7 +59,7 @@ export async function middleware(req: NextRequest) {
     return NextResponse.redirect(new URL(PUBLIC_ROUTES.SignIn, nextUrl));
   }
 
-  if (isPublicRoute && session && !path.startsWith(PRIVATE_ROUTES.Dashboard)) {
+  if (session && path.startsWith(PUBLIC_ROUTES.SignIn)) {
     return NextResponse.redirect(new URL(PRIVATE_ROUTES.Dashboard, nextUrl));
   }
 
