@@ -4,7 +4,6 @@ import type { Metadata } from "next";
 import { Montserrat } from "next/font/google";
 import { Outfit } from "next/font/google";
 import { UIProvider } from "@/context/UIContext";
-import Script from "next/script";
 import { ReactNode } from "react";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 
@@ -19,6 +18,7 @@ const outfit = Outfit({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL(`https://${process.env.NEXT_PUBLIC_BASE_URL}`),
   title: "StoryToast - Impactful Website Notifications",
   description:
     "Transform visitor engagement with attention-grabbing notifications that drive conversions.",
