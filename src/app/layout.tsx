@@ -32,10 +32,6 @@ export default function RootLayout({ children }: { children: ReactNode }) {
           className={`${outfit.variable} font-sans bg-gray-50 text-gray-900`}
           suppressHydrationWarning
         >
-          <Script
-            strategy="beforeInteractive"
-            src={`https://www.google.com/recaptcha/api.js?render=${process.env.NEXT_PUBLIC_CAPTCHA_SITE_KEY}`}
-          />
           <SessionProvider>{children}</SessionProvider>
           <SpeedInsights />
         </body>

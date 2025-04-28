@@ -20,7 +20,7 @@ type MagicLinkEmailProps = {
 };
 
 export default function MagicLinkEmail({
-  url = "http://localhost:3000/api/auth/callback/resend?callbackUrl=http%3A%2F%2Flocalhost%3A3000%2Fdashboard&token=28f1f29dcfe23025fbdd5e920466204944e2a02d1f4bde57d603c44043ce9277&email=matejfarkas%40hotmail.com",
+  url = "http://localhost:3000/api/auth/callback/resend?callbackUrl=http%3A%2F%2Flocalhost%3A3000%2Fdashboard&token=4a9a833f7da77667cf5b172f6d3f1b9ccb1a8a4302280d3305f0f94e1603ec99&email=matejfarkas%40hotmail.com",
   host = "localhost:3000",
 }: MagicLinkEmailProps) {
   return (
