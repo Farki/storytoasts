@@ -3,6 +3,7 @@
 import { Github, Twitter, Linkedin } from "lucide-react";
 import { Logo } from "@/components/ui/logo";
 import Link from "next/link";
+import { PUBLIC_ROUTES } from "@/routes";
 
 export function Footer() {
   return (
@@ -57,22 +58,6 @@ export function Footer() {
                   About
                 </Link>
               </li>
-              <li>
-                <Link
-                  href="#"
-                  className="text-sm text-muted-foreground hover:text-primary transition-colors"
-                >
-                  Blog
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="#"
-                  className="text-sm text-muted-foreground hover:text-primary transition-colors"
-                >
-                  Careers
-                </Link>
-              </li>
             </ul>
           </div>
           <div>
@@ -80,18 +65,18 @@ export function Footer() {
             <ul className="space-y-2">
               <li>
                 <Link
-                  href="#"
+                  href={PUBLIC_ROUTES.Terms}
                   className="text-sm text-muted-foreground hover:text-primary transition-colors"
                 >
-                  Privacy
+                  Terms
                 </Link>
               </li>
               <li>
                 <Link
-                  href="#"
+                  href={PUBLIC_ROUTES.Privacy}
                   className="text-sm text-muted-foreground hover:text-primary transition-colors"
                 >
-                  Terms
+                  Privacy
                 </Link>
               </li>
             </ul>
