@@ -12,10 +12,10 @@ export default function Buttons() {
   const user = session?.user;
 
   return (
-    <div className="flex-1 flex justify-end">
+    <div className="flex flex-1 justify-end">
       <nav className="flex items-center space-x-4">
         {status === "loading" ? (
-          <Skeleton className="w-20 h-11 rounded-md" />
+          <Skeleton className="h-11 w-20 rounded-md" />
         ) : user ? (
           <Button
             variant="ghost"

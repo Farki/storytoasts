@@ -19,8 +19,8 @@ export default function IntegrationPage() {
 
       <div className="grid gap-6">
         <Card className="p-6">
-          <div className="flex items-center gap-4 mb-4">
-            <div className="h-10 w-10 rounded-lg bg-primary/10 flex items-center justify-center">
+          <div className="mb-4 flex items-center gap-4">
+            <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-primary/10">
               <Code className="h-5 w-5" />
             </div>
             <div>
@@ -33,7 +33,7 @@ export default function IntegrationPage() {
 
           <div className="space-y-4">
             <div className="relative">
-              <pre className="rounded-lg bg-muted p-4 overflow-x-auto">
+              <pre className="overflow-x-auto rounded-lg bg-muted p-4">
                 <code className="text-sm">{scriptCode}</code>
               </pre>
               <Button
@@ -51,7 +51,7 @@ export default function IntegrationPage() {
               <div className="flex gap-2">
                 <Input value="sk_test_123456789" readOnly />
                 <Button variant="secondary">
-                  <Copy className="h-4 w-4 mr-2" />
+                  <Copy className="mr-2 h-4 w-4" />
                   Copy
                 </Button>
               </div>
@@ -60,20 +60,20 @@ export default function IntegrationPage() {
         </Card>
 
         <Card className="p-6">
-          <h3 className="font-semibold mb-4">Documentation & Resources</h3>
+          <h3 className="mb-4 font-semibold">Documentation & Resources</h3>
           <div className="grid gap-4 sm:grid-cols-2">
             <Button variant="outline" className="justify-start" asChild>
               <a href="/docs" target="_blank">
-                <Code className="h-4 w-4 mr-2" />
+                <Code className="mr-2 h-4 w-4" />
                 Documentation
-                <ExternalLink className="h-4 w-4 ml-2" />
+                <ExternalLink className="ml-2 h-4 w-4" />
               </a>
             </Button>
             <Button variant="outline" className="justify-start" asChild>
               <a href="/examples" target="_blank">
-                <Code className="h-4 w-4 mr-2" />
+                <Code className="mr-2 h-4 w-4" />
                 Example Projects
-                <ExternalLink className="h-4 w-4 ml-2" />
+                <ExternalLink className="ml-2 h-4 w-4" />
               </a>
             </Button>
           </div>

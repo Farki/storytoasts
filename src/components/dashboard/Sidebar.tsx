@@ -11,6 +11,7 @@ import {
   LayoutDashboard,
   LogOut,
   Settings,
+  Wrench,
 } from "lucide-react";
 import { useUI } from "@/context/UIContext";
 import { usePathname } from "next/navigation";
@@ -22,6 +23,11 @@ const navigation = [
     name: "Dashboard",
     href: PRIVATE_ROUTES.Dashboard,
     icon: LayoutDashboard,
+  },
+  {
+    name: "Builder",
+    href: "/dashboard/builder",
+    icon: Wrench,
   },
   {
     name: "Notifications",
@@ -39,13 +45,13 @@ export default function Sidebar() {
   return (
     <div
       className={cn(
-        "fixed left-0 top-0 z-20 flex h-full flex-col border-r bg-background transition-all",
+        "fixed left-0 top-0 z-20 flex h-full flex-col border-r bg-white transition-all",
         isNavCollapsed ? "w-16" : "w-64",
       )}
     >
       <div
         className={cn(
-          "flex h-16 justify-center border-b",
+          "flex h-16 justify-center border-b bg-dark/90",
           isNavCollapsed ? "px-[20%]" : "px-[30%]",
         )}
       >
@@ -62,8 +68,8 @@ export default function Sidebar() {
                 key={item.name}
                 href={item.href}
                 className={cn(
-                  "flex gap-3 rounded-lg px-3 py-2 text-sm text-white transition-all hover:bg-accent items-center",
-                  isActive ? "bg-accent" : "transparent",
+                  "flex items-center gap-3 rounded-lg px-3 py-2 text-sm text-gray-600 transition-all hover:bg-accent",
+                  isActive ? "bg-accent text-gray-900" : "transparent",
                   isNavCollapsed ? "justify-center" : "justify-start",
                 )}
               >
@@ -76,13 +82,13 @@ export default function Sidebar() {
       </div>
       <div
         className={cn(
-          "border-t py-4 flex",
+          "flex border-t py-4",
           isNavCollapsed ? "justify-center" : "justify-start",
         )}
       >
         <Button
           variant="ghost"
-          className="flex gap-3 rounded-lg px-3 py-2 text-sm transition-all hover:bg-accent w-full justify-start"
+          className="flex w-full justify-start gap-3 rounded-lg px-3 py-2 text-sm text-gray-600 transition-all hover:bg-accent"
           onClick={() => signOut()}
         >
           <>

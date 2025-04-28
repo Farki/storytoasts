@@ -55,40 +55,40 @@ export default function SignUpPage() {
   }
 
   return (
-    <div className="container -mt-[64px] md:-mt-[81px] relative h-screen flex-col items-center justify-center grid lg:max-w-none lg:grid-cols-2 lg:px-0">
+    <div className="container relative -mt-[64px] grid h-screen flex-col items-center justify-center md:-mt-[81px] lg:max-w-none lg:grid-cols-2 lg:px-0">
       <div className="relative hidden h-full flex-col bg-gradient-to-br from-purple-600 via-blue-400 to-purple-600 p-10 text-white lg:flex">
         <div className="relative z-20 mt-auto">
           {/* Animated Toast Notifications */}
-          <div className="relative mx-auto w-full max-w-[500px] h-[500px]">
+          <div className="relative mx-auto h-[500px] w-full max-w-[500px]">
             {/* Toast 1 */}
-            <div className="absolute top-0 left-0 w-full p-4 bg-white rounded-lg shadow-lg animate-float-1">
+            <div className="animate-float-1 absolute left-0 top-0 w-full rounded-lg bg-white p-4 shadow-lg">
               <div className="flex items-center gap-3">
-                <div className="w-8 h-8 rounded-full bg-primary/20" />
+                <div className="h-8 w-8 rounded-full bg-primary/20" />
                 <div className="space-y-1">
-                  <div className="h-2 w-24 bg-primary/20 rounded" />
-                  <div className="h-2 w-32 bg-primary/10 rounded" />
+                  <div className="h-2 w-24 rounded bg-primary/20" />
+                  <div className="h-2 w-32 rounded bg-primary/10" />
                 </div>
               </div>
             </div>
 
             {/* Toast 2 */}
-            <div className="absolute top-32 right-0 w-full p-4 bg-white rounded-lg shadow-lg animate-float-2">
+            <div className="animate-float-2 absolute right-0 top-32 w-full rounded-lg bg-white p-4 shadow-lg">
               <div className="flex items-center gap-3">
-                <div className="w-8 h-8 rounded-full bg-primary/20" />
+                <div className="h-8 w-8 rounded-full bg-primary/20" />
                 <div className="space-y-1">
-                  <div className="h-2 w-28 bg-primary/20 rounded" />
-                  <div className="h-2 w-36 bg-primary/10 rounded" />
+                  <div className="h-2 w-28 rounded bg-primary/20" />
+                  <div className="h-2 w-36 rounded bg-primary/10" />
                 </div>
               </div>
             </div>
 
             {/* Toast 3 */}
-            <div className="absolute top-60 left-10 w-full p-4 bg-white rounded-lg shadow-lg animate-float-3">
+            <div className="animate-float-3 absolute left-10 top-60 w-full rounded-lg bg-white p-4 shadow-lg">
               <div className="flex items-center gap-3">
-                <div className="w-8 h-8 rounded-full bg-primary/20" />
+                <div className="h-8 w-8 rounded-full bg-primary/20" />
                 <div className="space-y-1">
-                  <div className="h-2 w-20 bg-primary/20 rounded" />
-                  <div className="h-2 w-40 bg-primary/10 rounded" />
+                  <div className="h-2 w-20 rounded bg-primary/20" />
+                  <div className="h-2 w-40 rounded bg-primary/10" />
                 </div>
               </div>
             </div>

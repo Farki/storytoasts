@@ -3,10 +3,10 @@ import { LoaderCircle } from "lucide-react";
 
 export default function LoadingPageLoader() {
   return (
-    <div className="min-h-screen bg-background w-full flex flex-col items-center justify-center gap-4">
+    <div className="flex min-h-screen w-full flex-col items-center justify-center gap-4 bg-background">
       <div className="relative">
-        <div className="w-16 h-16 rounded-full bg-primary/10 animate-pulse flex items-center justify-center">
-          <LoaderCircle className="w-8 h-8 text-primary animate-spin" />
+        <div className="flex h-16 w-16 animate-pulse items-center justify-center rounded-full bg-primary/10">
+          <LoaderCircle className="h-8 w-8 animate-spin text-primary" />
         </div>
       </div>
       <div className="text-center">

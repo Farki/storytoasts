@@ -10,25 +10,25 @@ export const metadata: Metadata = {
 export default function TermsPage() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-purple-200 via-blue-400 to-purple-600">
-      <div className="container mx-auto px-4 py-16 mt-16">
-        <Card className="max-w-4xl mx-auto p-8 bg-background/95 backdrop-blur-sm border-white/20 shadow-xl">
+      <div className="container mx-auto mt-16 px-4 py-16">
+        <Card className="0 mx-auto max-w-4xl border-white/20 bg-white p-8 shadow-xl backdrop-blur-sm">
           <div className="mb-8">
             <Link
               href="/"
-              className="inline-flex items-center text-sm text-muted-foreground hover:text-primary transition-colors"
+              className="inline-flex items-center text-sm text-muted-foreground transition-colors hover:text-primary"
             >
               <ArrowLeft className="mr-2 h-4 w-4" />
               Back to Home
             </Link>
           </div>
 
-          <h1 className="text-3xl font-bold mb-8 bg-gradient-to-r from-primary via-purple-500 to-primary bg-clip-text text-transparent">
+          <h1 className="mb-8 bg-gradient-to-r from-primary via-purple-500 to-primary bg-clip-text text-3xl font-bold text-transparent">
             Terms and Conditions
           </h1>
 
           <div className="space-y-6 text-muted-foreground">
-            <section className="p-6 rounded-lg bg-white/5 backdrop-blur-sm">
-              <h2 className="text-xl font-semibold mb-4 text-primary">
+            <section className="rounded-lg bg-gray-100 p-6 backdrop-blur-sm">
+              <h2 className="mb-4 text-xl font-semibold text-primary">
                 1. Introduction
               </h2>
               <p>
@@ -38,11 +38,11 @@ export default function TermsPage() {
               </p>
             </section>
 
-            <section className="p-6 rounded-lg bg-white/5 backdrop-blur-sm">
-              <h2 className="text-xl font-semibold mb-4 text-primary">
+            <section className="rounded-lg bg-gray-100 p-6 backdrop-blur-sm">
+              <h2 className="mb-4 text-xl font-semibold text-primary">
                 2. Definitions
               </h2>
-              <ul className="list-disc pl-6 space-y-2">
+              <ul className="list-disc space-y-2 pl-6">
                 <li>
                   &quot;Service&quot; refers to the StoryToast platform and all
                   related services.
@@ -58,15 +58,15 @@ export default function TermsPage() {
               </ul>
             </section>
 
-            <section className="p-6 rounded-lg bg-white/5 backdrop-blur-sm">
-              <h2 className="text-xl font-semibold mb-4 text-primary">
+            <section className="rounded-lg bg-gray-100 p-6 backdrop-blur-sm">
+              <h2 className="mb-4 text-xl font-semibold text-primary">
                 3. Use of Service
               </h2>
               <p className="mb-4">
                 You agree to use the Service only for lawful purposes and in
                 accordance with these Terms. You are prohibited from:
               </p>
-              <ul className="list-disc pl-6 space-y-2">
+              <ul className="list-disc space-y-2 pl-6">
                 <li>Using the Service for any illegal activity</li>
                 <li>Attempting to interfere with or disrupt the Service</li>
                 <li>Impersonating any person or entity</li>
@@ -74,8 +74,8 @@ export default function TermsPage() {
               </ul>
             </section>
 
-            <section className="p-6 rounded-lg bg-white/5 backdrop-blur-sm">
-              <h2 className="text-xl font-semibold mb-4 text-primary">
+            <section className="rounded-lg bg-gray-100 p-6 backdrop-blur-sm">
+              <h2 className="mb-4 text-xl font-semibold text-primary">
                 4. Account Registration
               </h2>
               <p>
@@ -85,8 +85,8 @@ export default function TermsPage() {
               </p>
             </section>
 
-            <section className="p-6 rounded-lg bg-white/5 backdrop-blur-sm">
-              <h2 className="text-xl font-semibold mb-4 text-primary">
+            <section className="rounded-lg bg-gray-100 p-6 backdrop-blur-sm">
+              <h2 className="mb-4 text-xl font-semibold text-primary">
                 5. Privacy
               </h2>
               <p>
@@ -96,8 +96,8 @@ export default function TermsPage() {
               </p>
             </section>
 
-            <section className="p-6 rounded-lg bg-white/5 backdrop-blur-sm">
-              <h2 className="text-xl font-semibold mb-4 text-primary">
+            <section className="rounded-lg bg-gray-100 p-6 backdrop-blur-sm">
+              <h2 className="mb-4 text-xl font-semibold text-primary">
                 6. Fees and Payment
               </h2>
               <p className="mb-4">
@@ -107,8 +107,8 @@ export default function TermsPage() {
               </p>
             </section>
 
-            <section className="p-6 rounded-lg bg-white/5 backdrop-blur-sm">
-              <h2 className="text-xl font-semibold mb-4 text-primary">
+            <section className="rounded-lg bg-gray-100 p-6 backdrop-blur-sm">
+              <h2 className="mb-4 text-xl font-semibold text-primary">
                 7. Intellectual Property
               </h2>
               <p className="mb-4">
@@ -118,8 +118,8 @@ export default function TermsPage() {
               </p>
             </section>
 
-            <section className="p-6 rounded-lg bg-white/5 backdrop-blur-sm">
-              <h2 className="text-xl font-semibold mb-4 text-primary">
+            <section className="rounded-lg bg-gray-100 p-6 backdrop-blur-sm">
+              <h2 className="mb-4 text-xl font-semibold text-primary">
                 8. Termination
               </h2>
               <p>
@@ -130,8 +130,8 @@ export default function TermsPage() {
               </p>
             </section>
 
-            <section className="p-6 rounded-lg bg-white/5 backdrop-blur-sm">
-              <h2 className="text-xl font-semibold mb-4 text-primary">
+            <section className="rounded-lg bg-gray-100 p-6 backdrop-blur-sm">
+              <h2 className="mb-4 text-xl font-semibold text-primary">
                 9. Changes to Terms
               </h2>
               <p>
@@ -142,8 +142,8 @@ export default function TermsPage() {
               </p>
             </section>
 
-            <section className="p-6 rounded-lg bg-white/5 backdrop-blur-sm">
-              <h2 className="text-xl font-semibold mb-4 text-primary">
+            <section className="rounded-lg bg-gray-100 p-6 backdrop-blur-sm">
+              <h2 className="mb-4 text-xl font-semibold text-primary">
                 10. Contact Information
               </h2>
               <p>
@@ -158,7 +158,7 @@ export default function TermsPage() {
               </p>
             </section>
 
-            <div className="mt-8 pt-6 border-t border-white/10">
+            <div className="mt-8 border-t border-white/10 pt-6">
               <p className="text-sm">
                 Last updated: {new Date().toLocaleDateString()}
               </p>

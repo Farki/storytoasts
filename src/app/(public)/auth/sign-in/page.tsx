@@ -14,23 +14,23 @@ export default async function SignInPage() {
         src={`https://www.google.com/recaptcha/api.js?render=${process.env.NEXT_PUBLIC_CAPTCHA_SITE_KEY}`}
       />
 
-      <div className="container bg-background relative min-h-screen flex-col items-center justify-center grid lg:max-w-none lg:grid-cols-2 lg:px-0">
+      <div className="container relative grid min-h-screen flex-col items-center justify-center bg-background lg:max-w-none lg:grid-cols-2 lg:px-0">
         <div className="relative hidden h-full flex-col bg-gradient-to-br from-primary via-purple-600 to-primary p-10 text-white lg:flex">
           <div className="relative z-20 mt-auto">
             {/* Animated Dashboard Cards */}
-            <div className="relative w-full max-w-[500px] h-[500px]">
+            <div className="relative h-[500px] w-full max-w-[500px]">
               {/* Line Chart Card */}
-              <div className="absolute top-0 left-16 w-full p-6 bg-white rounded-2xl shadow-xl transform rotate-[-6deg] hover:rotate-[-4deg] transition-transform duration-300">
+              <div className="absolute left-16 top-0 w-full rotate-[-6deg] transform rounded-2xl bg-white p-6 shadow-xl transition-transform duration-300 hover:rotate-[-4deg]">
                 <div className="space-y-4">
                   <div className="flex items-center justify-between">
-                    <h3 className="text-gray-800 font-semibold">Income</h3>
-                    <LineChart className="text-primary h-5 w-5" />
+                    <h3 className="font-semibold text-gray-800">Income</h3>
+                    <LineChart className="h-5 w-5 text-primary" />
                   </div>
-                  <div className="h-32 flex items-end justify-between gap-1">
+                  <div className="flex h-32 items-end justify-between gap-1">
                     {[40, 70, 55, 90, 50, 75, 65].map((height, i) => (
                       <div
                         key={i}
-                        className="w-full bg-primary/20 rounded-t animate-pulse"
+                        className="w-full animate-pulse rounded-t bg-primary/20"
                         style={{ height: `${height}%` }}
                       />
                     ))}
@@ -39,13 +39,13 @@ export default async function SignInPage() {
               </div>
 
               {/* Main Stats Card */}
-              <div className="absolute top-32 left-32 w-full p-6 bg-white rounded-2xl shadow-xl transform rotate-[-6deg] hover:rotate-[-4deg] transition-transform duration-300">
+              <div className="absolute left-32 top-32 w-full rotate-[-6deg] transform rounded-2xl bg-white p-6 shadow-xl transition-transform duration-300 hover:rotate-[-4deg]">
                 <div className="space-y-4">
                   <div className="flex items-center justify-between">
-                    <h3 className="text-gray-800 font-semibold">
+                    <h3 className="font-semibold text-gray-800">
                       Recent Transactions
                     </h3>
-                    <DollarSign className="text-primary h-5 w-5" />
+                    <DollarSign className="h-5 w-5 text-primary" />
                   </div>
                   <div className="space-y-2">
                     {[1, 2, 3].map((i) => (
@@ -53,8 +53,8 @@ export default async function SignInPage() {
                         key={i}
                         className="flex items-center justify-between py-1"
                       >
-                        <div className="w-2/3 h-3 bg-gray-100 rounded animate-pulse" />
-                        <div className="w-1/4 h-3 bg-primary/20 rounded animate-pulse" />
+                        <div className="h-3 w-2/3 animate-pulse rounded bg-gray-100" />
+                        <div className="h-3 w-1/4 animate-pulse rounded bg-primary/20" />
                       </div>
                     ))}
                   </div>
@@ -62,19 +62,19 @@ export default async function SignInPage() {
               </div>
 
               {/* Bar Chart Card */}
-              <div className="absolute top-64 left-48 w-full p-6 bg-white rounded-2xl shadow-xl transform rotate-[-6deg] hover:rotate-[-4deg] transition-transform duration-300">
+              <div className="absolute left-48 top-64 w-full rotate-[-6deg] transform rounded-2xl bg-white p-6 shadow-xl transition-transform duration-300 hover:rotate-[-4deg]">
                 <div className="space-y-4">
                   <div className="flex items-center justify-between">
-                    <h3 className="text-gray-800 font-semibold">
+                    <h3 className="font-semibold text-gray-800">
                       Product Performance
                     </h3>
-                    <BarChart3 className="text-primary h-5 w-5" />
+                    <BarChart3 className="h-5 w-5 text-primary" />
                   </div>
-                  <div className="h-24 flex items-end justify-between gap-2">
+                  <div className="flex h-24 items-end justify-between gap-2">
                     {[60, 80, 40, 90, 30, 70].map((height, i) => (
                       <div
                         key={i}
-                        className="w-full bg-primary rounded-t animate-pulse"
+                        className="w-full animate-pulse rounded-t bg-primary"
                         style={{ height: `${height}%` }}
                       />
                     ))}
@@ -83,7 +83,7 @@ export default async function SignInPage() {
               </div>
             </div>
 
-            <blockquote className="space-y-2 mt-12">
+            <blockquote className="mt-12 space-y-2">
               <p className="text-lg">
                 {
                   '"StoryToast has transformed how we engage with our visitors. Theresults have been incredible."'

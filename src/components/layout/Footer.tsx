@@ -7,9 +7,9 @@ import { PUBLIC_ROUTES } from "@/routes";
 
 export function Footer() {
   return (
-    <footer className="border-t bg-background">
-      <div className="container py-12 px-8 mx-auto">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+    <footer className="border-t bg-dark">
+      <div className="container mx-auto px-8 py-12">
+        <div className="grid grid-cols-1 gap-8 md:grid-cols-4">
           <div className="space-y-3">
             <Link href="/" className="flex items-center space-x-2">
               <Logo className="h-8 md:h-14" />
@@ -19,12 +19,12 @@ export function Footer() {
             </p>
           </div>
           <div>
-            <h3 className="font-semibold mb-3 text-white">Product</h3>
+            <h3 className="mb-3 font-semibold text-white">Product</h3>
             <ul className="space-y-2">
               <li>
                 <Link
                   href="#"
-                  className="text-sm text-muted-foreground hover:text-primary transition-colors"
+                  className="text-sm text-muted-foreground transition-colors hover:text-primary"
                 >
                   Features
                 </Link>
@@ -32,7 +32,7 @@ export function Footer() {
               <li>
                 <Link
                   href="#"
-                  className="text-sm text-muted-foreground hover:text-primary transition-colors"
+                  className="text-sm text-muted-foreground transition-colors hover:text-primary"
                 >
                   Pricing
                 </Link>
@@ -40,7 +40,7 @@ export function Footer() {
               <li>
                 <Link
                   href="#"
-                  className="text-sm text-muted-foreground hover:text-primary transition-colors"
+                  className="text-sm text-muted-foreground transition-colors hover:text-primary"
                 >
                   Documentation
                 </Link>
@@ -48,12 +48,12 @@ export function Footer() {
             </ul>
           </div>
           <div>
-            <h3 className="font-semibold mb-3 text-white">Company</h3>
+            <h3 className="mb-3 font-semibold text-white">Company</h3>
             <ul className="space-y-2">
               <li>
                 <Link
                   href="#"
-                  className="text-sm text-muted-foreground hover:text-primary transition-colors"
+                  className="text-sm text-muted-foreground transition-colors hover:text-primary"
                 >
                   About
                 </Link>
@@ -61,12 +61,12 @@ export function Footer() {
             </ul>
           </div>
           <div>
-            <h3 className="font-semibold mb-3 text-white">Legal</h3>
+            <h3 className="mb-3 font-semibold text-white">Legal</h3>
             <ul className="space-y-2">
               <li>
                 <Link
                   href={PUBLIC_ROUTES.Terms}
-                  className="text-sm text-muted-foreground hover:text-primary transition-colors"
+                  className="text-sm text-muted-foreground transition-colors hover:text-primary"
                 >
                   Terms
                 </Link>
@@ -74,7 +74,7 @@ export function Footer() {
               <li>
                 <Link
                   href={PUBLIC_ROUTES.Privacy}
-                  className="text-sm text-muted-foreground hover:text-primary transition-colors"
+                  className="text-sm text-muted-foreground transition-colors hover:text-primary"
                 >
                   Privacy
                 </Link>
@@ -82,28 +82,28 @@ export function Footer() {
             </ul>
           </div>
         </div>
-        <div className="flex flex-col md:flex-row justify-between items-center mt-12 pt-8 border-t">
+        <div className="mt-12 flex flex-col items-center justify-between border-t border-y-gray-800 pt-8 md:flex-row">
           <p className="text-sm text-muted-foreground">
             © {new Date().getFullYear()} StoryToast. All rights reserved.
           </p>
-          <div className="flex space-x-4 mt-4 md:mt-0">
+          <div className="mt-4 flex space-x-4 md:mt-0">
             <Link
               href="https://twitter.com"
-              className="text-muted-foreground hover:text-primary transition-colors"
+              className="text-muted-foreground transition-colors hover:text-primary"
             >
               <Twitter className="h-5 w-5" />
               <span className="sr-only">Twitter</span>
             </Link>
             <Link
               href="https://github.com"
-              className="text-muted-foreground hover:text-primary transition-colors"
+              className="text-muted-foreground transition-colors hover:text-primary"
             >
               <Github className="h-5 w-5" />
               <span className="sr-only">GitHub</span>
             </Link>
             <Link
               href="https://linkedin.com"
-              className="text-muted-foreground hover:text-primary transition-colors"
+              className="text-muted-foreground transition-colors hover:text-primary"
             >
               <Linkedin className="h-5 w-5" />
               <span className="sr-only">LinkedIn</span>

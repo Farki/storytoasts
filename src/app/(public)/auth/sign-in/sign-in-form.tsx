@@ -91,12 +91,12 @@ const SignInForm = () => {
         </form>
         <div className="flex items-center justify-center text-muted-foreground">
           <Mail />
-          <p className="text-center text-sm text-muted-foreground mx-2">
+          <p className="mx-2 text-center text-sm text-muted-foreground">
             {"We'll send a magic link to your inbox"}
           </p>
         </div>
         {state?.message && (
-          <p className="text-red-500 text-center">{state.message}</p>
+          <p className="text-center text-red-500">{state.message}</p>
         )}
 
         {state?.errors && (
