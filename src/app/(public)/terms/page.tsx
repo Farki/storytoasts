@@ -98,10 +98,9 @@ export default function TermsPage() {
                 6. Fees and Payment
               </h2>
               <p className="mb-4">
-                Some features of StoryToast may require payment ("Paid
-                Services"). Pricing, billing, and refund policies will be
-                clearly communicated before you subscribe. You authorize us to
-                charge your provided payment method for applicable fees.
+                {
+                  'Some features of StoryToast may require payment ("Paid Services"). Pricing, billing, and refund policies will be clearly communicated before you subscribe. You authorize us to charge your provided payment method for applicable fees.'
+                }
               </p>
             </section>
 
