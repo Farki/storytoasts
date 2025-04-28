@@ -29,7 +29,7 @@ export const metadata: Metadata = {
     url: "https://storytoasts.com/",
     siteName: "StoryToasts",
     images: {
-      url: "./og-image.png",
+      url: "/images/og-image.png",
       alt: "StoryToasts - Impactful Website Notifications",
       width: 1200,
       height: 630,
