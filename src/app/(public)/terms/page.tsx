@@ -1,6 +1,11 @@
 import { Card } from "@/components/ui/card";
 import Link from "next/link";
 import { ArrowLeft } from "lucide-react";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Terms",
+};
 
 export default function TermsPage() {
   return (

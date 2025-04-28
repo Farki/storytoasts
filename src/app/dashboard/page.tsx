@@ -7,6 +7,11 @@ import {
   Activity,
   Code,
 } from "lucide-react";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Dashboard",
+};
 
 export default function Dashboard() {
   const stats = [

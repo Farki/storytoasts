@@ -1,6 +1,11 @@
 import { BarChart3, LineChart, DollarSign } from "lucide-react";
 import SignInForm from "@/app/(public)/auth/sign-in/sign-in-form";
 import Script from "next/script";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Sign In",
+};
 
 export default async function SignInPage() {
   return (
