@@ -17,6 +17,7 @@ model User {
   image         String?
   accounts      Account[]
   sessions      Session[]
+  projects      Project[]
 
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
@@ -60,4 +61,28 @@ model VerificationToken {
   expires    DateTime
 
   @@id([identifier, token])
+}
+
+model Project {
+  id     String  @id @default(cuid())
+  name   String
+  userId String
+  user   User    @relation(fields: [userId], references: [id], onDelete: Cascade)
+  toasts Toast[]
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model Toast {
+  id        String  @id @default(cuid())
+  title     String
+  text      String
+  time      String
+  imageUrl  String
+  projectId String
+  project   Project @relation(fields: [projectId], references: [id], onDelete: Cascade)
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
 }

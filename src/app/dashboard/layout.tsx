@@ -8,7 +8,7 @@ export default async function AdminLayout({
   children: React.ReactNode;
 }) {
   return (
-    <div className="relative flex min-h-screen bg-gray-50">
+    <div className="relative flex min-h-screen bg-stone-50">
       <Sidebar />
 
       <Content>

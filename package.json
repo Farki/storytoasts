@@ -23,6 +23,7 @@
     "@radix-ui/react-label": "^2.1.4",
     "@radix-ui/react-slot": "^1.2.0",
     "@react-email/components": "^0.0.36",
+    "@vercel/blob": "^1.0.0",
     "@vercel/speed-insights": "^1.2.0",
     "autoprefixer": "10.4.15",
     "class-variance-authority": "^0.7.0",
@@ -35,6 +36,7 @@
     "postcss": "8.4.31",
     "react": "^19.1.0",
     "react-dom": "^19.1.0",
+    "react-dropzone": "^14.3.8",
     "react-hook-form": "^7.56.1",
     "resend": "^4.4.0",
     "server-only": "^0.0.1",
@@ -55,6 +57,8 @@
     "react-email": "4.0.7"
   },
   "prettier": {
-    "plugins": ["prettier-plugin-tailwindcss"]
+    "plugins": [
+      "prettier-plugin-tailwindcss"
+    ]
   }
 }

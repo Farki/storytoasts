@@ -7,7 +7,7 @@ import { PUBLIC_ROUTES } from "@/routes";
 
 export function Footer() {
   return (
-    <footer className="border-t bg-dark">
+    <footer className="bg-dark">
       <div className="container mx-auto px-8 py-12">
         <div className="grid grid-cols-1 gap-8 md:grid-cols-4">
           <div className="space-y-3">

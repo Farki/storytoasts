@@ -1,10 +1,10 @@
 "use server";
 
 import { signIn } from "@/server/auth";
-import { signInSchema } from "@/validations/singInSchema";
 import { verifyCaptchaToken } from "@/lib/captcha";
 import arcjet, { validateEmail } from "@/lib/arcjet";
 import { request } from "@arcjet/next";
+import { signInFormSchema } from "@/validations/singInFormSchema";
 
 export type FormState = {
   fields?: Record<string, string>;
@@ -26,7 +26,7 @@ export async function signInAction(
 ): Promise<FormState> {
   try {
     const formData = Object.fromEntries(data);
-    const parsed = signInSchema.safeParse(formData);
+    const parsed = signInFormSchema.safeParse(formData);
     if (!parsed.success) {
       const fields: Record<string, string> = {};
       for (const key of Object.keys(formData)) {

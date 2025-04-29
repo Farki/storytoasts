@@ -22,11 +22,9 @@ export const { handlers, auth, signIn, signOut } = NextAuth(() => {
       error: "/auth/auth-error",
     },
     callbacks: {
-      // authorized: async ({ auth }) => {
-      //   // Logged in users are authenticated, otherwise redirect to login page
-      //   return !!auth;
-      // },
-      async redirect({ baseUrl }) {
+      async redirect({ url, baseUrl }) {
+        // Redirect user on sign in
+        if (url.startsWith(baseUrl)) return url; //Allow only internal redirects
         return `${baseUrl}${PRIVATE_ROUTES.Dashboard}`;
       },
     },
