@@ -9,17 +9,39 @@ import React, {
 import { LoaderCircle, Plus } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useSession } from "next-auth/react";
-import { createUpdateToasts } from "@/server/actions/toastAction";
+import { createUpdateToasts, deleteToast } from "@/server/actions/toastAction";
 import { useFieldArray, useForm } from "react-hook-form";
 import { z } from "zod";
 import { toastFormSchema, toastSchema } from "@/validations/toastFormSchema";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { Form } from "@/components/ui/form";
-import ToastFormCard from "@/components/forms/ToastFormCard";
-import { Toast } from "@/generated/prisma";
+import {
+  DndContext,
+  PointerSensor,
+  TouchSensor,
+  useSensor,
+  useSensors,
+} from "@dnd-kit/core";
+import {
+  SortableContext,
+  verticalListSortingStrategy,
+} from "@dnd-kit/sortable";
+import dynamic from "next/dynamic";
+import { Skeleton } from "../ui/skeleton";
+//fix hydration error
+const ToastFormCard = dynamic(
+  () => import("@/components/forms/ToastFormCard"),
+  {
+    ssr: false,
+    loading: () => <Skeleton className="h-28 w-full rounded-md" />,
+  },
+);
 
 type ToastFormData = z.infer<typeof toastFormSchema>;
 type Toasts = z.infer<typeof toastSchema>[];
+type ToastWithFieldId = z.infer<typeof toastSchema> & {
+  fieldId: string;
+};
 
 type Props = {
   toasts: Toasts;
@@ -48,8 +70,6 @@ export default function ToastForm({ toasts, ...props }: Props) {
     formState: { isValid },
   } = form;
 
-  const toastsArray = useFieldArray({ control, name: "toasts" });
-
   const onSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     await handleSubmit((data) => {
@@ -59,6 +79,12 @@ export default function ToastForm({ toasts, ...props }: Props) {
     })(e);
   };
 
+  const toastsArray = useFieldArray({
+    control,
+    name: "toasts",
+    keyName: "fieldId",
+  });
+
   const onAddNew = () => {
     toastsArray.append({
       title: "",
@@ -67,19 +93,56 @@ export default function ToastForm({ toasts, ...props }: Props) {
     });
   };
 
+  const onDragEnd = (event: any) => {
+    const { active, over } = event;
+    if (active.id === over.id) return;
+
+    const oldIndex = toastsArray.fields.findIndex(
+      (item) => item.fieldId === active.id,
+    );
+    const newIndex = toastsArray.fields.findIndex(
+      (item) => item.fieldId === over.id,
+    );
+
+    if (oldIndex === -1 || newIndex === -1) return;
+
+    toastsArray.move(oldIndex, newIndex);
+  };
+
+  const sensors = useSensors(useSensor(PointerSensor), useSensor(TouchSensor));
+
+  const handleToastDelete = (position: number, id?: string | null) => {
+    if (!id) {
+      toastsArray.remove(position);
+    } else {
+      deleteToast(id);
+      toastsArray.remove(position);
+    }
+  };
+
   return (
     <Form {...form}>
       <form ref={formRef} onSubmit={onSubmit} {...props}>
-        <div className="mb-4 space-y-4 rounded-2xl border-2 border-gray-300/80 p-6">
-          {toastsArray.fields.map((toast, id) => (
-            <ToastFormCard
-              key={id}
-              id={id}
-              toast={toast as Toast}
-              form={form}
-              setValue={setValue}
-            />
-          ))}
+        <div className="rounded-2xl border border-gray-300/80 p-6">
+          <DndContext sensors={sensors} onDragEnd={onDragEnd}>
+            <div className="mb-4 space-y-4">
+              <SortableContext
+                items={toastsArray.fields.map((field) => field.fieldId)}
+                strategy={verticalListSortingStrategy}
+              >
+                {toastsArray.fields.map((toast, id) => (
+                  <ToastFormCard
+                    key={toast.fieldId}
+                    id={id}
+                    toast={toast as ToastWithFieldId}
+                    form={form}
+                    setValue={setValue}
+                    handleToastDelete={() => handleToastDelete(id, toast?.id)}
+                  />
+                ))}
+              </SortableContext>
+            </div>
+          </DndContext>
 
           <div className="flex justify-center">
             <Button
@@ -91,15 +154,17 @@ export default function ToastForm({ toasts, ...props }: Props) {
             </Button>
           </div>
         </div>
-        <Button type="submit" disabled={!isValid}>
-          {isPending ? (
-            <>
-              <LoaderCircle className="animate-spin" /> {"Saving..."}
-            </>
-          ) : (
-            "Save"
-          )}
-        </Button>
+        <div className="mt-6 flex justify-center">
+          <Button type="submit" disabled={!isValid}>
+            {isPending ? (
+              <>
+                <LoaderCircle className="animate-spin" /> {"Saving..."}
+              </>
+            ) : (
+              "Save"
+            )}
+          </Button>
+        </div>
       </form>
     </Form>
   );

@@ -7,7 +7,7 @@ type Props = {
   id: number;
   setValue: any;
   isError: boolean;
-  imageUrl: string;
+  imageUrl?: string;
 };
 
 enum CustomErrorCode {
@@ -19,7 +19,9 @@ const ALLOWED_WIDTH = 300;
 const ALLOWED_HEIGHT = 300;
 
 export default function FileUpload({ id, imageUrl, setValue, isError }: Props) {
-  const [filePreview, setFilePreview] = React.useState<string | null>(imageUrl);
+  const [filePreview, setFilePreview] = React.useState<string | undefined>(
+    imageUrl,
+  );
   const [fileError, setFileError] = React.useState<FileUploadErrorCode | null>(
     null,
   );
@@ -51,8 +53,10 @@ export default function FileUpload({ id, imageUrl, setValue, isError }: Props) {
       const acceptedFile = acceptedFiles[0];
 
       if (fileRejections.length > 0) {
-        setValue(`toasts.${id}.image`, null);
-        setFilePreview(null);
+        setValue(`toasts.${id}.image`, null, {
+          shouldValidate: true,
+        });
+        setFilePreview(undefined);
         setFileError(
           fileRejections.map((f) => f.errors[0].code as ErrorCode)?.[0],
         );
@@ -63,11 +67,13 @@ export default function FileUpload({ id, imageUrl, setValue, isError }: Props) {
 
       if (acceptedFile && isValid) {
         setFilePreview(URL.createObjectURL(acceptedFile));
-        setValue(`toasts.${id}.image`, acceptedFile);
+        setValue(`toasts.${id}.image`, acceptedFile, {
+          shouldValidate: true,
+        });
         setFileError(null);
       }
     },
-    [setValue],
+    [id, setValue],
   );
 
   const { getRootProps, getInputProps, isDragActive } = useDropzone({

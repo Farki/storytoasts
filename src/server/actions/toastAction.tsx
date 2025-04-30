@@ -1,12 +1,15 @@
 "use server";
 
-import { prisma } from "@/lib/prisma";
 import { FormState } from "@/server/actions/signInAction";
 import { put } from "@vercel/blob";
 import { z } from "zod";
 import { toastFormSchema, toastSchema } from "@/validations/toastFormSchema";
 import { QUERIES } from "@/server/db/queries";
 import { requireAuthenticatedUser } from "@/lib/authHelpers";
+import { revalidatePath } from "next/cache";
+import { PRIVATE_ROUTES } from "@/routes";
+import { MUTATIONS } from "@/server/db/mutations";
+type ToastWithId = z.infer<typeof toastSchema> & { id: string };
 
 export async function getToasts(): Promise<z.infer<typeof toastSchema>[]> {
   const user = await requireAuthenticatedUser();
@@ -22,7 +25,6 @@ export async function createUpdateToasts(
   const user = await requireAuthenticatedUser();
 
   const { toasts } = data;
-  console.log("toasts", toasts);
 
   try {
     for (const toast of toasts) {
@@ -37,25 +39,9 @@ export async function createUpdateToasts(
       }
 
       if (toast.id) {
-        await prisma.toast.update({
-          where: { id: toast.id },
-          data: {
-            title: toast.title,
-            text: toast.text,
-            time: toast.time,
-            imageUrl: imageUrl!,
-          },
-        });
+        await MUTATIONS.updateToast(toast as ToastWithId, imageUrl!);
       } else {
-        await prisma.toast.create({
-          data: {
-            title: toast.title,
-            text: toast.text,
-            time: toast.time,
-            imageUrl: imageUrl!,
-            projectId: user.projects[0].id, //TODO multiple projects
-          },
-        });
+        await MUTATIONS.createToast(toast, imageUrl!, user.projects[0].id);
       }
     }
   } catch (error) {
@@ -66,9 +52,18 @@ export async function createUpdateToasts(
     };
   }
 
+  revalidatePath(PRIVATE_ROUTES.Dashboard);
+
   return {
     success: true,
   };
+}
+
+export async function deleteToast(id: string) {
+  await requireAuthenticatedUser();
+  await MUTATIONS.deleteToast(id);
+
+  revalidatePath(PRIVATE_ROUTES.Dashboard);
 }
 
 // export async function createToast(data: {
