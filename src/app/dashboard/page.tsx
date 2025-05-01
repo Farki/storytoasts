@@ -20,7 +20,7 @@ export default async function Dashboard() {
       </div>
 
       <div className="flex-col">
-        <div>Test</div>
+        <div>Configuration</div>
 
         <Container>
           <ToastForm toasts={toasts} />

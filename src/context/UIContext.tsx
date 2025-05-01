@@ -1,6 +1,7 @@
 "use client";
 
 import { createContext, useContext, useState, ReactNode } from "react";
+import { useResolution } from "@/hooks/useResolution";
 
 const UIContext = createContext<{
   isNavCollapsed: boolean;
@@ -11,7 +12,8 @@ const UIContext = createContext<{
 });
 
 export const UIProvider = ({ children }: { children: ReactNode }) => {
-  const [isNavCollapsed, setIsNavCollapsed] = useState(false);
+  const { isMobile } = useResolution();
+  const [isNavCollapsed, setIsNavCollapsed] = useState(isMobile ?? true);
 
   const toggleNav = () => setIsNavCollapsed((prev) => !prev);
 
