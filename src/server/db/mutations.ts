@@ -13,6 +13,7 @@ export const MUTATIONS = {
         time: toast.time,
         imageUrl: imageUrl,
         projectId: projectId, //TODO multiple projects
+        order: toast.order,
       },
     });
   },
@@ -25,6 +26,7 @@ export const MUTATIONS = {
         text: toast.text,
         time: toast.time,
         imageUrl: imageUrl!,
+        order: toast.order,
       },
     });
   },

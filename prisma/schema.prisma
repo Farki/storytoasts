@@ -82,6 +82,7 @@ model Toast {
   imageUrl  String
   projectId String
   project   Project @relation(fields: [projectId], references: [id], onDelete: Cascade)
+  order     Int
 
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt

@@ -11,6 +11,7 @@ export const toastSchema = z
       .optional(), // input from form
     imageUrl: z.string().url().optional(), // existing saved image URL
     projectId: z.string().optional(),
+    order: z.number(),
   })
   .refine((data) => data.imageUrl || data.image, {
     message: "Image is required if imageUrl is missing.",

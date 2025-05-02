@@ -16,13 +16,22 @@ export const QUERIES = {
     });
   },
 
-  getToasts: async (userId: string): Promise<Toast[]> => {
+  getToastsByUserId: async (userId: string): Promise<Toast[]> => {
     return await prisma.toast.findMany({
       where: {
         project: {
           userId: userId,
         },
       },
+    });
+  },
+
+  getToastsByProjectId: async (projectId: string): Promise<Toast[]> => {
+    return await prisma.toast.findMany({
+      where: {
+        projectId,
+      },
+      orderBy: { order: "desc" },
     });
   },
 };

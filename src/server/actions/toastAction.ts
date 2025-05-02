@@ -14,7 +14,7 @@ type ToastWithId = z.infer<typeof toastSchema> & { id: string };
 export async function getToasts(): Promise<z.infer<typeof toastSchema>[]> {
   const user = await requireAuthenticatedUser();
 
-  const toasts = await QUERIES.getToasts(user.id!);
+  const toasts = await QUERIES.getToastsByUserId(user.id!);
   return toasts;
 }
 
@@ -25,7 +25,7 @@ export async function createUpdateToasts(
   const user = await requireAuthenticatedUser();
 
   const { toasts } = data;
-
+  console.log("toasts", toasts);
   try {
     for (const toast of toasts) {
       const imageFile = toast.image;

@@ -70,11 +70,20 @@ export default function ToastForm({ toasts, ...props }: Props) {
     formState: { isValid },
   } = form;
 
+  const reorderToasts = (data: { toasts: z.infer<typeof toastSchema>[] }) => {
+    return {
+      toasts: data.toasts.map((toast, index) => ({
+        ...toast,
+        order: index + 1,
+      })),
+    };
+  };
+
   const onSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     await handleSubmit((data) => {
       startTransition(() => {
-        formAction(data);
+        formAction(reorderToasts(data));
       });
     })(e);
   };
@@ -90,6 +99,7 @@ export default function ToastForm({ toasts, ...props }: Props) {
       title: "",
       text: "",
       time: "",
+      order: toastsArray.fields.length + 1,
     });
   };
 

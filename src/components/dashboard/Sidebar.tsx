@@ -25,11 +25,6 @@ const navigation = [
     icon: LayoutDashboard,
   },
   {
-    name: "Builder",
-    href: "/dashboard/builder",
-    icon: Wrench,
-  },
-  {
     name: "Notifications",
     href: PRIVATE_ROUTES.Notifications,
     icon: BellRing,
